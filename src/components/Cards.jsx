@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Cards({ item }) {
+  //const navigate = useNavigate();
   return (
     <>
-      <div className="mt-4 my-3 p-3">
+      <div className="mt-4 my-3 p-3" /* onClick={() => navigate(`/cards/${item.id}`)} */>
         <div className="card w-92 bg-base-100 shadow-xl hover:scale-105 duration-200 dark:bg-slate-900 dark:text-white dark:border">
           <figure>
             <img src={item.image} alt="Shoes" />

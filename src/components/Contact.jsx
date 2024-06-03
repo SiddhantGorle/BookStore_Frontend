@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
+import { BASE_URL } from "../const";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const contact = () => {
   const [form, setForm] = useState({
@@ -27,16 +30,23 @@ const contact = () => {
     return errors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
       // Submit form
-      console.log(form);
-      setForm({ name: "", email: "", message: "" });
-      setErrors({});
+      try {
+        const response = await axios.post(`${BASE_URL}/contact`, form);
+        console.log("Server response:", response.data);
+        toast.success("Thanks for your response, We will get back to you");        
+        // Clear form and errors
+        setForm({ name: "", email: "", message: "" });
+        setErrors({});
+      } catch (error) {
+        console.error("There was an error submitting the form!", error);
+      }
     }
   };
 
