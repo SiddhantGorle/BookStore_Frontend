@@ -6,12 +6,12 @@ function Cards({ item }) {
   return (
     <>
       <div className="mt-4 my-3 p-3" /* onClick={() => navigate(`/cards/${item.id}`)} */>
-        <div className="card w-92 bg-base-100 shadow-xl hover:scale-105 duration-200 dark:bg-slate-900 dark:text-white dark:border">
+        <div className="card w-92 bg-base-100 shadow-xl hover:scale-105 duration-200 dark:bg-zinc-700 dark:text-white flex flex-col">
           <figure>
-            <img src={item.image} alt="Shoes" />
+            <img src={item.image} alt="Image" />
           </figure>
-          <div className="card-body">
-            <h2 className="card-title">
+          <div className="card-body max-h-full">
+            <h2 className="card-title h-1 contents">
               {item.name}
               <div className="badge badge-secondary">{item.category}</div>
             </h2>

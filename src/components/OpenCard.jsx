@@ -31,7 +31,7 @@ function OpenCard() {
       if (!item) return <div>Item not found</div>;
 
   return (
-    <div className="container mx-auto mt-4">
+    <div className="container mx-auto mt-4 bg-gradient-to-r from-neutral to-transparent">
       <div className="card w-full bg-base-100 shadow-xl dark:bg-slate-900 dark:text-white dark:border">
         <figure>
           <img src={item.image} alt={item.name} />

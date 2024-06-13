@@ -18,7 +18,7 @@ function Course() {
     getBook();
   }, []);
   return (
-    <>
+    <div className="dark:bg-gradient-to-r from-neutral to-transparent">
       <div className=" max-w-screen-2xl container mx-auto md:px-20 px-4">
         <div className=" mt-16 items-center justify-center text-center">
           <h1 className="text-2xl p-10  md:text-4xl">
@@ -46,7 +46,7 @@ function Course() {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

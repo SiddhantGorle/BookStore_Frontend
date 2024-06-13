@@ -13,7 +13,7 @@ function App() {
   console.log(authUser);
   return (
     <>
-      <div className="dark:bg-slate-900 dark:text-white">
+      <div className="dark:bg-gradient-to-r from-neutral to-transparent dark:text-white">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
